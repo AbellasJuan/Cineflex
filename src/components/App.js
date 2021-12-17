@@ -7,7 +7,7 @@ import SelectMovie from "./SelectMovie.js";
 import SelectSession from "./SelectSession.js";
 import SelectSeat from "./SelectSeat.js";
 import Success from "./Success.js";
-import HomePage from './HomePage';
+import HomePage from './SelectMovie';
 import Header from "./Header.js"
 
 
@@ -19,7 +19,7 @@ export default function App(){
             <Routes>
             <Route path="/" element={<HomePage/>}/>
             <Route path="/selectMovie" element={<SelectMovie/>}/>
-            <Route path="/sessoes" element={<SelectSession/>}/>
+            <Route path="/sessoes/:id" element={<SelectSession/>}/>
             <Route path="/assentos" element={<SelectSeat/>}/>
             <Route path="/asfdadsd" element={<Success/>}/>
             </Routes>

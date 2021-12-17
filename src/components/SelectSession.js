@@ -1,15 +1,24 @@
-// import axios from 'axios';
-// import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
-export default function SelectSession({key}){
 
-    // const [sessoes, setSessoes] = useState([]);
+export default function SelectSession(){
+    const { id } = useParams();
 
-    // useEffect(() => {
-    //     const resposta = axios.get(`https://mock-api.driven.com.br/api/v4/cineflex/movies/${idDoFilme}/showtimes`);
+    const [sessoes, setSessoes] = useState([]);
 
-    // })
-console.log(key)
+    useEffect(() => {
+        const resposta = axios.get(`https://mock-api.driven.com.br/api/v4/cineflex/movies/${id}/showtimes`);
+
+        resposta.then((resp) => {
+            setSessoes(resp.data);
+        })
+
+    }, [])
+
+    console.log(sessoes.days)
+    //sessoes.days => fazer map aqui 
 
     return(
         <>
