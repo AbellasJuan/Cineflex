@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import Footer from './Footer';
 
 
 export default function SelectSession(){
@@ -19,6 +20,7 @@ export default function SelectSession(){
 
     console.log(sessoes.days)
     //sessoes.days => fazer map aqui 
+
 
     return(
         <>
@@ -51,9 +53,9 @@ export default function SelectSession(){
                 </div>
                 </div>
             </div>
-
-            
-            
+   
+            <Footer/>
         </>
     )
 };
+

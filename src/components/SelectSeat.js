@@ -1,3 +1,4 @@
+import Footer from "./Footer";
 
 export default function SelectSeat(){
 
@@ -9,11 +10,16 @@ export default function SelectSeat(){
 
         <div className="comprador-dados">
             <p>Nome do comprador:</p>
-            <input/>
+            <input type="text"  placeholder="Digite seu nome..." />
             <p>Nome do comprador:</p>
-            <input/>
+            <input type="text"  placeholder="Digite seu CPF... " />
         </div>
         
+        <button>
+            <p>Reservar assento(s)</p>
+        </button>
+
+        <Footer/>
         </>
     )
 };

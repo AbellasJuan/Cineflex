@@ -1,6 +1,5 @@
 *{
     box-sizing: border-box;
-    
 }
 
 ul{
@@ -107,6 +106,36 @@ ul{
 /*assentos*/
 .comprador-dados{
     margin-left: 24px;
-    
 }
 
+.comprador-dados p{
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 7px;
+}
+
+.comprador-dados input{
+    height: 51px;
+    width: 327px;
+    margin-top: 7px;
+}
+
+/*shared button*/
+button{
+    width: 225px;
+    height: 42px;
+    background-color: #E8833A;
+    border: none;
+    border-radius: 3px;
+    margin-left: 75px;
+    margin-top: 60px;
+}
+
+button p{
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 400;
+    color: #FFFFFF;
+    text-align: center;
+}
