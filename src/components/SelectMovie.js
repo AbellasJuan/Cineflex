@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import axios from 'axios';;
+import axios from 'axios';
 
 export default function HomePage(){
 
@@ -9,13 +9,10 @@ export default function HomePage(){
     useEffect(() => {
         const requisicao = axios.get('https://mock-api.driven.com.br/api/v4/cineflex/movies');
 
-        requisicao.then( resposta => {
+        requisicao.then(resposta => {
             setFilmes(resposta.data);
         });
     }, []);    
-
-    console.log(filmes);
-    console.log(filmes.posterURL)
 
     return(
         <>
@@ -25,14 +22,11 @@ export default function HomePage(){
             
                 {filmes.map((filme , index) => 
                     <Link to={`/sessoes/${filme.id}`}>
-                        <div className="img-rectangle" index={index}>
-                            <img src={filme.posterURL} alt=""/>
+                        <div className="img-rectangle">
+                            <img src={filme.posterURL} alt="" />
                         </div>
-                    </Link>
-                        
+                    </Link>        
                 )}
-                
-
         </>
     )
 };

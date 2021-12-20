@@ -1,6 +1,16 @@
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
-export default function Success(){
+export default function Success({ order , setOrder }){
+
+    const { cpf, name, selectedSeats, showtime } = order;
+
+    const navigate = useNavigate();
+
+    function backToHome() {
+        setOrder(null);
+        navigate('/');
+    };
 
     return(
         <>
@@ -9,31 +19,34 @@ export default function Success(){
         }}> 
             <p style={{
                 'color': '#247A6B',
-                'text-align': 'center',
-                'font-weight': '700',
-                'line-height': '28px',
-                'letter-spacing': '0.04em'
+                'textAlign': 'center',
+                'fontWeight': '700',
+                'lineHeight': '28px',
+                'letterSpacing': '0.04em'
             }}>Pedido feito<br/> com sucesso!</p>
         </div>
         <FilmeSessao>
             <h1>Filme e sessão</h1>
-            <p>Enola Holmes<br/>
-            24/06/2021 15:00</p>
+            <p>{showtime.movie.title}<br/>
+            {showtime.day.date}  {showtime.name}</p>
         </FilmeSessao>
 
         <Ingressos>
             <h1>Ingressos</h1>
-            <p>Assento 15<br/>
-            Assento 16</p>
+            {
+                selectedSeats.map((seat, index) => (
+                    <p key={index}>Assento {seat.name}<br/></p>
+                ))
+            }
         </Ingressos>
 
         <Comprador>
             <h1>Comprador</h1>
-            <p>Nome: João da Silva Sauro<br/>
-            CPF: 123.456.789-10</p>
+            <p>{name}<br/>
+            CPF: {cpf}</p>
         </Comprador>
             
-        <button>
+        <button onClick={backToHome}>
             <p>Voltar para Home</p>
         </button>
         </>

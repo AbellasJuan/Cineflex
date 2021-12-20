@@ -1,43 +1,57 @@
 import styled from 'styled-components';
 
-export default function Footer(){
+export default function Footer({ showtime, weekday, name }) {
     return(
         <Container>
             <div className="img-rectangle" style={{
                 'width': '64px', 
                 'height': '89px', 
                 'margin':'0',
-                'margin-left':'10px',
+                'marginLeft':'10px',
                 'display': 'flex' 
             }}>
-                <img src="" alt=""  style={{
+                <img src={showtime.posterURL} alt=""  style={{
                     'width': '48px', 
                     'height': '72px', 
             }}/>
             </div>
-            <p>Movie Title</p>
+            <MovieInformations>
+            <p>{showtime.title}</p>
+            <p>
+                {
+                    weekday ?
+                    `${weekday} - ${name}` 
+                    : ''
+                }
+            </p>
+            </MovieInformations>
         </Container>
     )
 };
 
+
 const Container = styled.div`
-    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     height: 117px;
-    position: absolute;
-    bottom: 0px; left: 0;
-    background-color: aliceblue;
+    border-top: 1px solid #9EADBA;
+    background-color: #DFE6ED;
+    padding: 14px 10px;
     display: flex;
-    align-items: center; 
-    
     
     p{
-        font-family: Roboto;
-        font-size: 26px;
-        margin-left: 14px;
-        font-weight: 400;
-        
+      
+      margin-left: 14px;
+      font-size: 26px;
     }
-
 `
 
+const MovieInformations = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
 
+`
