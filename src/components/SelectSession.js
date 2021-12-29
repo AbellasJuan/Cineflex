@@ -16,7 +16,7 @@ export default function SelectSession(){
           response.then(res => {        
             setShowtimes(res.data)
           })
-      }, []);
+      }, [idFilme]);
 
     return(
         <>
