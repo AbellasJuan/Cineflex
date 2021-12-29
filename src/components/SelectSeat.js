@@ -5,7 +5,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import Footer from "./Footer";
 
 export default function SelectSeat({ setOrder }){
-// eslint-disable-next-line
+
     const { idSessao } = useParams();
 
     const navigate = useNavigate();
@@ -16,12 +16,12 @@ export default function SelectSeat({ setOrder }){
     const [cpf, setCpf] = useState("");
 
     useEffect(() => {
-      // eslint-disable-next-line
+      
       const response = axios.get(`https://mock-api.driven.com.br/api/v4/cineflex/showtimes/${idSessao}/seats`);
         response.then(res => {
           setShowtime(res.data)
         })
-    }, []);
+    }, [idSessao]);
   
   
     function selectingSeats(seat) {
