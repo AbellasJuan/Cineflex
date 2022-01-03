@@ -80,10 +80,9 @@ ul{
   justify-content: center;
 }
 
-.time-rectangle p{
+.time-rectangle span{
   font-weight: 400;
   font-size: 18px;
-  text-decoration: none;
   color: #FFFFFF;
 }
 
@@ -143,13 +142,15 @@ ul{
 }
 
 .client-info{
-    margin-left: 24px;
+  text-align: center;
 }
 
 .client-info p{
     font-size: 18px;
     font-weight: 400;
-    margin-top: 7px;
+    margin-top: 12px;
+    text-align: start;
+    margin-left: 23px;    
 }
 
 .client-info input{
@@ -211,6 +212,7 @@ button{
     border-radius: 3px;
     margin-left: 75px;
     margin-top: 40px;
+    text-align: center;
 }
 
 button p{

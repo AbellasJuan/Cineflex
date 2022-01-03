@@ -10,9 +10,11 @@ export default function Day({ day }) {
       <div className="showtime-list">
         {
           day.showtimes.map((seat, index) => (
-            <Link to={`/assentos/${seat.id}`}>
+            <Link style={{
+              'textDecoration': 'none',
+          }}to={`/assentos/${seat.id}`}>
               <div className="time-rectangle" key={index}>
-                <p>{seat.name}</p>
+                <span>{seat.name}</span>
               </div>
             </Link>
           ))

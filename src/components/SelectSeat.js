@@ -101,7 +101,9 @@ export default function SelectSeat({ setOrder }){
             <input type="text" placeholder="Digite seu CPF..." onChange={(e) => setCpf(e.target.value)} value={cpf}/>
         </div>
         
-        <button onClick={() => bookingSession()}>
+        <button style={{
+                'marginBottom': '150px', 
+          }} onClick={() => bookingSession()}>
             <p>Reservar assento(s)</p>
         </button>
 
