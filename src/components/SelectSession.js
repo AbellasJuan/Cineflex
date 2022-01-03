@@ -27,8 +27,8 @@ export default function SelectSession(){
             <div className="day-list">
                 {
                 showtime ?
-                showtime.days.map(day => (
-                    <Day day={day} />
+                showtime.days.map((day, index) => (
+                    <Day key={index} day={day} />
                 ))
                 :  ''
                 }
