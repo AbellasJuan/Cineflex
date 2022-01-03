@@ -142,15 +142,19 @@ ul{
 }
 
 .client-info{
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .client-info p{
-    font-size: 18px;
-    font-weight: 400;
-    margin-top: 12px;
-    text-align: start;
-    margin-left: 23px;    
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 12px;
+  display: initial;
+  width: 180px;
+  margin-left: -40%;
 }
 
 .client-info input{
